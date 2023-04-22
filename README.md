@@ -85,14 +85,23 @@ Para personalizar y ampliar el proyecto, se pueden agregar, modificar o eliminar
 
   - Agregar o modificar alarmas de CloudWatch: Actualmente, se han definido alarmas de CloudWatch para monitorear la utilización de CPU y el número de conexiones de red en las instancias EC2. Si deseas agregar nuevas alarmas o modificar las existentes, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear la utilización de memoria de las instancias EC2 o modificar los umbrales de las alarmas existentes.
 
-![1CloudWatch](https://user-images.githubusercontent.com/126183973/233781589-944d37cb-8d19-4d7e-a8d8-f61843b7ecce.png)
-
 ![1CloudWatch_](https://user-images.githubusercontent.com/126183973/233782052-ba5017d3-2c0f-4159-a686-ed81f7273932.png)
 
 _Modificar el umbral de la alarma(cambia Threshold a otro valor)._
 
-  - Monitorear otros recursos de AWS: Si deseas monitorear otros recursos de AWS, como RDS, Lambda o ELB, puedes agregar nuevas alarmas de CloudWatch en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear el espacio libre en disco de una instancia RDS o la duración de las funciones Lambda.
-  - Agregar métricas personalizadas: Si tienes métricas personalizadas que deseas monitorear, puedes agregarlas a CloudWatch utilizando el AWS SDK (por ejemplo, en Python) o la CLI de AWS. Luego, puedes crear alarmas de CloudWatch en el archivo monitoring_resources.yml para monitorear estas métricas personalizadas.
+  - Monitorear otros recursos de AWS: Si deseas monitorear otros recursos de AWS, como RDS, Lambda o ELB, puedes agregar nuevas alarmas de CloudWatch en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear el espacio libre en disco de una instancia RDS.
+
+![FreeStorageSpaceAlarm](https://user-images.githubusercontent.com/126183973/233782106-c8cdcce5-834e-4cd1-bd89-0be205fc4c71.png)
+
+  - Agregar métricas personalizadas: Si tienes métricas personalizadas que deseas monitorear, puedes agregarlas a CloudWatch utilizando la CLI de AWS. Luego, puedes crear alarmas de CloudWatch en el archivo monitoring_resources.yml para monitorear estas métricas personalizadas.
+
+  Métrica personalizada: `MyCustomMetric`
+  CLI de AWS: `aws cloudwatch put-metric-data --namespace MyNamespace --metric-name MyCustomMetric --value 42 --unit Count`
+  
+  Agregar una alarma de CloudWatch para monitorear esta métrica
+  
+  ![MyCustomMetricAlarm](https://user-images.githubusercontent.com/126183973/233782227-598aad40-fb1d-4d89-9f50-63716b3f94b0.png)
+
   - Configurar la retención de registros en CloudWatch Logs: Si deseas modificar la política de retención de registros en CloudWatch Logs, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías modificar el valor del atributo RetentionInDays del recurso LogGroup para ajustar la cantidad de días que se retienen los registros.
   - Configurar AWS Config: Si deseas agregar o modificar las reglas de AWS Config para evaluar la conformidad de tus recursos de AWS, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una regla para verificar que las instancias EC2 no están utilizando un tipo de instancia específico o que todos los recursos tienen una etiqueta "Owner".
 
