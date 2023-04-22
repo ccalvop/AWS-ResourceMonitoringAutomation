@@ -113,7 +113,7 @@ Para personalizar y ampliar el proyecto, se pueden agregar, modificar o eliminar
 
   - Configurar AWS Config: Si deseas agregar o modificar las reglas de AWS Config para evaluar la conformidad de tus recursos de AWS, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una regla para verificar que las instancias EC2 no están utilizando un tipo de instancia específico o que todos los recursos tienen una etiqueta "Owner".
 
-  _Agregar una regla de AWS Config para verificar que las instancias EC2 no están utilizando un tipo de instancia específico (por ejemplo, t2.micro):
+  _Agregar una regla de AWS Config para verificar que las instancias EC2 no están utilizando un tipo de instancia específico (por ejemplo, t2.micro):_
 
   ![EC2InstanceTypeRule](https://user-images.githubusercontent.com/126183973/233782315-ff39881a-63f6-4f5d-820a-4d559f74c5f6.png)
 
