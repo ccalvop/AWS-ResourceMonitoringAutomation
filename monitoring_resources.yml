@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: AWS Resource Monitoring Automation
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+
+  CloudTrail:
+    Type: AWS::CloudTrail::Trail
+    Properties:
+      S3BucketName: !Ref S3Bucket
+      IncludeGlobalServiceEvents: true
+      IsLogging: true
+      IsMultiRegionTrail: true
+
+  ConfigRecorder:
+    Type: AWS::Config::ConfigurationRecorder
+    Properties:
+      RecordingGroup:
+        AllSupported: true
+        IncludeGlobalResourceTypes: true
+      RoleARN:
+        Fn::ImportValue: !Sub "AWS-ResourceMonitoringAutomation-ConfigRoleArn"
+
+  ConfigDeliveryChannel:
+    Type: AWS::Config::DeliveryChannel
+    Properties:
+      S3BucketName: !Ref S3Bucket
+
+  SNSAlarmTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: Alarm Notifications
+
+  CPUCreditBalanceAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: Trigger an alarm if the CPU credit balance falls below 50
+      Namespace: AWS/EC2
+      MetricName: CPUCreditBalance
+      Statistic: SampleCount
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 50
+      ComparisonOperator: LessThanThreshold
+      AlarmActions:
+        - !Ref SNSAlarmTopic
