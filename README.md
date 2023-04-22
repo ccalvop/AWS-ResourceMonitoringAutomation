@@ -35,3 +35,6 @@ Automatizar el monitoreo de recursos de AWS y la configuración de servicios de 
 **Resultado esperado:**
 
 Al finalizar el proyecto tendremos una solución de **monitoreo y registro de recursos de AWS** automatizada que podremos desplegar fácilmente mediante AWS CloudFormation o Terraform. La solución incluirá alarmas personalizadas basadas en métricas específicas, registro de eventos y actividades de la API, y configuración de auditoría de recursos.
+
+***
+
