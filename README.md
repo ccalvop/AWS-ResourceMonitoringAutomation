@@ -6,7 +6,7 @@
 
 **Objetivo:**
 
-Automatizar el monitoreo de recursos de AWS y la configuración de servicios de registro utilizando AWS CloudFormation o Terraform.
+Automatizar el monitoreo de recursos de AWS y la configuración de servicios de registro utilizando AWS CloudFormation.
 
 **Servicios de AWS involucrados:**
 
@@ -19,22 +19,22 @@ Automatizar el monitoreo de recursos de AWS y la configuración de servicios de 
 
 **Archivos y código a crear:**
 
-  :one:. Un archivo de plantilla de AWS CloudFormation (en YAML o JSON) o un archivo de configuración de Terraform (en HCL) que incluya:
+  :one:. Un archivo de plantilla de AWS CloudFormation (en YAML o JSON) que incluya:
 
    - La configuración de Amazon **CloudWatch Alarms** para recursos específicos y métricas (por ejemplo, CPUUtilization para una instancia EC2).
    - La configuración de AWS **CloudTrail** para habilitar el registro de eventos y actividades de la API en tu cuenta.
    - La configuración de AWS **Config** para evaluar y auditar la configuración de tus recursos de AWS.
    - La configuración de Amazon **SNS** para enviar notificaciones cuando se disparen las alarmas.
     
-  :two:. Un archivo README.md que explique:
+  :two:. Un archivo README.md con instrucciones:
 
-   - El propósito y los objetivos del proyecto.
-   - Cómo desplegar y configurar el proyecto utilizando AWS CloudFormation o Terraform.
+   - Objetivos del proyecto.
+   - Cómo desplegar y configurar el proyecto utilizando AWS CloudFormation.
    - Cómo personalizar y ampliar el proyecto para monitorear diferentes recursos y métricas.
     
 **Resultado esperado:**
 
-Al finalizar el proyecto tendremos una solución de **monitoreo y registro de recursos de AWS** automatizada que podremos desplegar fácilmente mediante AWS CloudFormation o Terraform. La solución incluirá alarmas personalizadas basadas en métricas específicas, registro de eventos y actividades de la API, y configuración de auditoría de recursos.
+Al finalizar el proyecto tendremos una solución de **monitoreo y registro de recursos de AWS** automatizada que podremos desplegar fácilmente mediante AWS CloudFormation. La solución incluirá alarmas personalizadas basadas en métricas específicas, registro de eventos y actividades de la API, y configuración de auditoría de recursos.
 
 ***
 
