@@ -86,6 +86,9 @@ Para personalizar y ampliar el proyecto, se pueden agregar, modificar o eliminar
   - Agregar o modificar alarmas de CloudWatch: Actualmente, se han definido alarmas de CloudWatch para monitorear la utilización de CPU y el número de conexiones de red en las instancias EC2. Si deseas agregar nuevas alarmas o modificar las existentes, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear la utilización de memoria de las instancias EC2 o modificar los umbrales de las alarmas existentes.
 
 ![1CloudWatch](https://user-images.githubusercontent.com/126183973/233781589-944d37cb-8d19-4d7e-a8d8-f61843b7ecce.png)
+
+![1CloudWatch_](https://user-images.githubusercontent.com/126183973/233782052-ba5017d3-2c0f-4159-a686-ed81f7273932.png)
+
 _Modificar el umbral de la alarma(cambia Threshold a otro valor)._
 
   - Monitorear otros recursos de AWS: Si deseas monitorear otros recursos de AWS, como RDS, Lambda o ELB, puedes agregar nuevas alarmas de CloudWatch en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear el espacio libre en disco de una instancia RDS o la duración de las funciones Lambda.
