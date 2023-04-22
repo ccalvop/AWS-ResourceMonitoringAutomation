@@ -38,7 +38,7 @@ Al finalizar el proyecto tendremos una solución de **monitoreo y registro de re
 
 ***
 
-#### Diseño de la infraestructura
+### Paso 1: Diseño de la infraestructura
 
 **AWS CloudTrail:**
   - Crearemos un nuevo trail en CloudTrail.
@@ -61,5 +61,16 @@ Al finalizar el proyecto tendremos una solución de **monitoreo y registro de re
   - Crearemos un nuevo tema de SNS para enviar notificaciones cuando se disparen las alarmas de CloudWatch.
   - Los suscriptores pueden recibir notificaciones por correo electrónico, SMS u otros.
 
+### Paso 2: Creación de la plantilla de AWS CloudFormation
 
+Archivo YAML de CloudFormation que cubre los servicios AWS CloudTrail, AWS Config, Amazon CloudWatch y Amazon SNS
 
+[monitoring_resources.yml](https://github.com/ccalvop/AWS-ResourceMonitoringAutomation/blob/main/monitoring_resources.yml)
+
+**Instrucciones para usar la plantilla de CloudFormation:**
+  - En AWS **CloudFormation**, botón "Crear pila" en la esquina superior derecha.
+  - Seleccionar "Cargar una plantilla de archivo" y hacer clic en "Seleccionar archivo". Selecciona el archivo `monitoring_resources.yml` 
+  - Nombrar la pila, configurar etiquetas y permisos (usar usuario adecuado), click `crear recursos con roles personalizados en tu nombre`
+
+**Revertir los cambios de la plantilla de CloudFormation:**
+Para revertir los cambios realizados por la plantilla de CloudFormation, se puede eliminar la pila de CloudFormation que se creó a partir de la plantilla. Esto eliminará todos los recursos creados por la plantilla, como el trail de CloudTrail, el registro de configuración y las alarmas de CloudWatch, pero hemos establecido la política de eliminación del bucket S3 a "Retain", lo que significa que el bucket de S3 no se eliminará automáticamente.
