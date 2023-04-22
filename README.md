@@ -38,3 +38,12 @@ Al finalizar el proyecto tendremos una solución de **monitoreo y registro de re
 
 ***
 
+#### Diseño de la infraestructura
+
+AWS CloudTrail:
+  - Crearemos un nuevo trail en CloudTrail.
+  - El trail estará habilitado para todas las regiones.
+  - Los eventos de administración y datos se registrarán.
+  - Los registros se guardarán en un bucket de Amazon S3.
+  - También se puede configurar el cifrado y la retención de registros según las necesidades.
+
