@@ -76,3 +76,16 @@ Archivo YAML de CloudFormation que cubre los servicios AWS CloudTrail, AWS Confi
 **Revertir los cambios de la plantilla de CloudFormation:**
 
 Para revertir los cambios realizados por la plantilla de CloudFormation, se puede eliminar la pila de CloudFormation que se creó a partir de la plantilla. Esto eliminará todos los recursos creados por la plantilla, como el trail de CloudTrail, el registro de configuración y las alarmas de CloudWatch, pero hemos establecido la política de eliminación del bucket S3 a "Retain", lo que significa que el bucket de S3 no se eliminará automáticamente.
+
+***
+
+### Personalizar y ampliar el proyecto para monitorear diferentes recursos y métricas
+
+Para personalizar y ampliar el proyecto, se pueden agregar, modificar o eliminar recursos y métricas en el archivo [monitoring_resources.yml](https://github.com/ccalvop/AWS-ResourceMonitoringAutomation/blob/main/monitoring_resources.yml)
+
+  - Agregar o modificar alarmas de CloudWatch: Actualmente, se han definido alarmas de CloudWatch para monitorear la utilización de CPU y el número de conexiones de red en las instancias EC2. Si deseas agregar nuevas alarmas o modificar las existentes, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear la utilización de memoria de las instancias EC2 o modificar los umbrales de las alarmas existentes.
+  - Monitorear otros recursos de AWS: Si deseas monitorear otros recursos de AWS, como RDS, Lambda o ELB, puedes agregar nuevas alarmas de CloudWatch en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear el espacio libre en disco de una instancia RDS o la duración de las funciones Lambda.
+  - 
+
+
+
