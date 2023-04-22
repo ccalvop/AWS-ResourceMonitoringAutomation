@@ -40,10 +40,26 @@ Al finalizar el proyecto tendremos una solución de **monitoreo y registro de re
 
 #### Diseño de la infraestructura
 
-AWS CloudTrail:
+**AWS CloudTrail:**
   - Crearemos un nuevo trail en CloudTrail.
   - El trail estará habilitado para todas las regiones.
   - Los eventos de administración y datos se registrarán.
   - Los registros se guardarán en un bucket de Amazon S3.
-  - También se puede configurar el cifrado y la retención de registros según las necesidades.
+  - Configurar el cifrado y la retención de registros.
+
+**AWS Config:**
+  - Habilitaremos AWS Config en todas las regiones de la cuenta de AWS.
+  - Configuraremos un bucket de S3 para almacenar los datos de configuración de los recursos.
+  - Agregaremos reglas de AWS Config para verificar el cumplimiento de políticas específicas.
+
+**Amazon CloudWatch:**
+  - Crearemos alarmas de CloudWatch para métricas específicas de los recursos de AWS.
+  - Alarmas como la de monitorear el uso de CPU de las instancias EC2 o el número de errores en una cola de mensajes SQS.
+  - Configuraremos las acciones que se realizarán cuando se disparen las alarmas, como enviar notificaciones a través de Amazon SNS.
+
+**Amazon SNS:**
+  - Crearemos un nuevo tema de SNS para enviar notificaciones cuando se disparen las alarmas de CloudWatch.
+  - Los suscriptores pueden recibir notificaciones por correo electrónico, SMS u otros.
+
+
 
