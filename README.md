@@ -96,7 +96,8 @@ _Modificar el umbral de la alarma(cambia Threshold a otro valor)._
   - Agregar métricas personalizadas: Si tienes métricas personalizadas que deseas monitorear, puedes agregarlas a CloudWatch utilizando la CLI de AWS. Luego, puedes crear alarmas de CloudWatch en el archivo monitoring_resources.yml para monitorear estas métricas personalizadas.
 
   Métrica personalizada: `MyCustomMetric`
-  CLI de AWS: `aws cloudwatch put-metric-data --namespace MyNamespace --metric-name MyCustomMetric --value 42 --unit Count`
+  **CLI** de AWS: 
+  `aws cloudwatch put-metric-data --namespace MyNamespace --metric-name MyCustomMetric --value 42 --unit Count`
   
   Agregar una alarma de CloudWatch para monitorear esta métrica
   
