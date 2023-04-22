@@ -2,9 +2,7 @@
   <img src="https://user-images.githubusercontent.com/126183973/233773172-cf7eefea-4a55-47ac-981f-17d0ebf2f5a8.jpg" />
 </p>
 
-### AWS-ResourceMonitoringAutomation ### Abril 2023
-
-
+### AWS-ResourceMonitoringAutomation - Abril 2023
 
 **Objetivo:**
 
