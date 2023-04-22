@@ -21,16 +21,16 @@ Automatizar el monitoreo de recursos de AWS y la configuración de servicios de 
 
   1. Un archivo de plantilla de AWS CloudFormation (en YAML o JSON) o un archivo de configuración de Terraform (en HCL) que incluya:
 
-    - La configuración de Amazon **CloudWatch Alarms** para recursos específicos y métricas (por ejemplo, CPUUtilization para una instancia EC2).
-    - La configuración de AWS **CloudTrail** para habilitar el registro de eventos y actividades de la API en tu cuenta.
-    - La configuración de AWS **Config** para evaluar y auditar la configuración de tus recursos de AWS.
-    - La configuración de Amazon **SNS** para enviar notificaciones cuando se disparen las alarmas.
+   - La configuración de Amazon **CloudWatch Alarms** para recursos específicos y métricas (por ejemplo, CPUUtilization para una instancia EC2).
+   - La configuración de AWS **CloudTrail** para habilitar el registro de eventos y actividades de la API en tu cuenta.
+   - La configuración de AWS **Config** para evaluar y auditar la configuración de tus recursos de AWS.
+   - La configuración de Amazon **SNS** para enviar notificaciones cuando se disparen las alarmas.
     
   2. Un archivo README.md que explique:
 
-    - El propósito y los objetivos del proyecto.
-    - Cómo desplegar y configurar el proyecto utilizando AWS CloudFormation o Terraform.
-    - Cómo personalizar y ampliar el proyecto para monitorear diferentes recursos y métricas.
+   - El propósito y los objetivos del proyecto.
+   - Cómo desplegar y configurar el proyecto utilizando AWS CloudFormation o Terraform.
+   - Cómo personalizar y ampliar el proyecto para monitorear diferentes recursos y métricas.
     
 **Resultado esperado:**
 
