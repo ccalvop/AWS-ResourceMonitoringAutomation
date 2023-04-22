@@ -84,8 +84,14 @@ Para revertir los cambios realizados por la plantilla de CloudFormation, se pued
 Para personalizar y ampliar el proyecto, se pueden agregar, modificar o eliminar recursos y métricas en el archivo [monitoring_resources.yml](https://github.com/ccalvop/AWS-ResourceMonitoringAutomation/blob/main/monitoring_resources.yml)
 
   - Agregar o modificar alarmas de CloudWatch: Actualmente, se han definido alarmas de CloudWatch para monitorear la utilización de CPU y el número de conexiones de red en las instancias EC2. Si deseas agregar nuevas alarmas o modificar las existentes, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear la utilización de memoria de las instancias EC2 o modificar los umbrales de las alarmas existentes.
+
+![1CloudWatch](https://user-images.githubusercontent.com/126183973/233781589-944d37cb-8d19-4d7e-a8d8-f61843b7ecce.png)
+_Modificar el umbral de la alarma(cambia Threshold a otro valor)._
+
   - Monitorear otros recursos de AWS: Si deseas monitorear otros recursos de AWS, como RDS, Lambda o ELB, puedes agregar nuevas alarmas de CloudWatch en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una alarma para monitorear el espacio libre en disco de una instancia RDS o la duración de las funciones Lambda.
-  - 
+  - Agregar métricas personalizadas: Si tienes métricas personalizadas que deseas monitorear, puedes agregarlas a CloudWatch utilizando el AWS SDK (por ejemplo, en Python) o la CLI de AWS. Luego, puedes crear alarmas de CloudWatch en el archivo monitoring_resources.yml para monitorear estas métricas personalizadas.
+  - Configurar la retención de registros en CloudWatch Logs: Si deseas modificar la política de retención de registros en CloudWatch Logs, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías modificar el valor del atributo RetentionInDays del recurso LogGroup para ajustar la cantidad de días que se retienen los registros.
+  - Configurar AWS Config: Si deseas agregar o modificar las reglas de AWS Config para evaluar la conformidad de tus recursos de AWS, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una regla para verificar que las instancias EC2 no están utilizando un tipo de instancia específico o que todos los recursos tienen una etiqueta "Owner".
 
 
 
