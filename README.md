@@ -96,7 +96,9 @@ _Modificar el umbral de la alarma(cambia Threshold a otro valor)._
   - Agregar métricas personalizadas: Si tienes métricas personalizadas que deseas monitorear, puedes agregarlas a CloudWatch utilizando la CLI de AWS. Luego, puedes crear alarmas de CloudWatch en el archivo monitoring_resources.yml para monitorear estas métricas personalizadas.
 
   Métrica personalizada: `MyCustomMetric`
+  
   **CLI** de AWS: 
+  
   `aws cloudwatch put-metric-data --namespace MyNamespace --metric-name MyCustomMetric --value 42 --unit Count`
   
   Agregar una alarma de CloudWatch para monitorear esta métrica
@@ -104,7 +106,19 @@ _Modificar el umbral de la alarma(cambia Threshold a otro valor)._
   ![MyCustomMetricAlarm](https://user-images.githubusercontent.com/126183973/233782227-598aad40-fb1d-4d89-9f50-63716b3f94b0.png)
 
   - Configurar la retención de registros en CloudWatch Logs: Si deseas modificar la política de retención de registros en CloudWatch Logs, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías modificar el valor del atributo RetentionInDays del recurso LogGroup para ajustar la cantidad de días que se retienen los registros.
+
+![MyLogGroup](https://user-images.githubusercontent.com/126183973/233782845-1a077b8d-9c05-4dad-988c-d099556e0009.png)
+
+_Al agregar este fragmento de código a la sección "Resources", se creará un log group en CloudWatch Logs con una retención de registros de 14 días._
+
   - Configurar AWS Config: Si deseas agregar o modificar las reglas de AWS Config para evaluar la conformidad de tus recursos de AWS, puedes hacerlo en la sección Resources del archivo monitoring_resources.yml. Por ejemplo, podrías agregar una regla para verificar que las instancias EC2 no están utilizando un tipo de instancia específico o que todos los recursos tienen una etiqueta "Owner".
 
+_Agregar una regla de AWS Config para verificar que las instancias EC2 no están utilizando un tipo de instancia específico (por ejemplo, t2.micro):
 
+![EC2InstanceTypeRule](https://user-images.githubusercontent.com/126183973/233782315-ff39881a-63f6-4f5d-820a-4d559f74c5f6.png)
 
+_Agregar una regla de AWS Config para verificar cada 24h que todos los recursos tengan una etiqueta "Owner"_
+
+![ResourceOwnerTagRule](https://user-images.githubusercontent.com/126183973/233782916-a36dd7f5-de3a-41c8-abaa-b391c8f483db.png)
+
+_Se puede agregar este fragmento de código a la sección "Resources" del archivo monitoring_resources.yml_
