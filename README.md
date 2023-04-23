@@ -3,7 +3,6 @@
 </p>
 
 ### AWS-ResourceMonitoringAutomation 
-Abril 2023
 
 **Objetivo:**
 
